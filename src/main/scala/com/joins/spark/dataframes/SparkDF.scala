@@ -29,11 +29,11 @@ object SparkDF {
 
     spark.sqlContext.sql("select transaction_id,user_name,user_type,transaction_date from" +
             "(select * from addColViewTable a left join df2ViewTable b ON a.Year=b.valid_year)"+"where valid_year IS NULL")
-            .write.option("header","true").csv("C:/Users/talas/OneDrive/Desktop/Group Links/SPARK TRAINING/ForPracticeData/REJECT_OUTPUT")
+            .write.option("header","true").csv("C:/Users/talas/OneDrive/Desktop/Group Links/SPARK TRAINING/ForPracticeData/REJECT_OUTPUT1")
 
     spark.sqlContext.sql("select transaction_id,user_name,user_type,transaction_date from" +
       "(select * from addColViewTable a left join df2ViewTable b ON a.Year=b.valid_year)"+"where valid_year IS NOT NULL")
-      .write.option("header","true").csv("C:/Users/talas/OneDrive/Desktop/Group Links/SPARK TRAINING/ForPracticeData/VALID_OUTPUT")
+      .write.option("header","true").csv("C:/Users/talas/OneDrive/Desktop/Group Links/SPARK TRAINING/ForPracticeData/VALID_OUTPUT1")
   }
 
 }
